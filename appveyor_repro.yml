@@ -1,0 +1,20 @@
+version: 1.0.{build}
+before_build:
+- ps: >-
+    if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
+            {
+                git checkout $env:APPVEYOR_REPO_BRANCH -q
+                cinst docfx -y
+            }
+
+    nuget restore
+build:
+  project: IpfsCore.sln
+  verbosity: minimal
+after_build:
+- ps: >-
+    if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
+
+    {
+                docfx doc/docfx.json
+    }
