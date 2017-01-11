@@ -9,10 +9,6 @@ cache:
   - packages -> **\packages.config      # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
 assembly_info:
   patch: false
-nuget:
-  account_feed: true
-  project_feed: true
-  disable_publish_on_pr: true
 before_build:
 - ps: >-
     if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
