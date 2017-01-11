@@ -1,7 +1,6 @@
 # gitversion will change the version number
 version: x-{build}
 platform: Any CPU
-configuration: Release
 before_build:
 - ps: >-
     if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
