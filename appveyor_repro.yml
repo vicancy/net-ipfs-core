@@ -20,5 +20,5 @@ after_build:
     if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
 
     {
-                docfx doc/docfx.json
+                docfx metadata doc/docfx.json -f
     }
