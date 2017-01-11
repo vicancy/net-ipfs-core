@@ -1,8 +1,5 @@
 # gitversion will change the version number
 version: x-{build}
-platform: Any CPU
-configuration: Release
-os: Visual Studio 2015
 before_build:
 - ps: >-
     if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
